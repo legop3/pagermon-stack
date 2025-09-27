@@ -1,0 +1,1 @@
+nc -l -u -p 7355 | sox -t raw -esigned-integer -b16 -r48000 - -t raw -esigned-integer -b16 -r22050 - | multimon-ng -t raw -a FLEX -a POCSAG512 -a POCSAG1200 -a POCSAG2400 -f alpha -
