@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+    pagermon:
+        # build:
+        image: pagermon/pagermon
+        user: root
+        container_name: pagermon-premade
+        ports:
+            - 3000:3000
+        volumes:
+            - ./data:/config
+        environment:
+            - TZ=Europe/London
+            - NODE_ENV=production
+            - HOSTNAME=localhost
+            - USE_COOKIE_HOST=false
+            - APP_NAME=pagermon
